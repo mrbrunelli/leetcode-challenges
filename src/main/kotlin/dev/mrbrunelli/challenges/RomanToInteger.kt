@@ -1,34 +1,29 @@
 package dev.mrbrunelli.challenges
 
 class RomanToInteger {
-    private val dict = mapOf(
-        'I' to 1,
-        'V' to 5,
-        'X' to 10,
-        'L' to 50,
-        'C' to 100,
-        'D' to 500,
-        'M' to 1000
-    )
-
-    private fun getDict(c: Char): Int {
-        return dict[c] ?: 0
+    private fun cvt(c: Char): Int {
+        return when (c) {
+            'I' -> 1
+            'V' -> 5
+            'X' -> 10
+            'L' -> 50
+            'C' -> 100
+            'D' -> 500
+            'M' -> 1000
+            else -> 0
+        }
     }
 
     fun play(s: String): Int {
-        var result = 0
-        for ((currentIndex, char) in s.withIndex()) {
-            val currentValue = getDict(char)
-            if (currentIndex < s.lastIndex) {
-                if (currentValue < getDict(s[currentIndex + 1])) {
-                    result -= currentValue
-                } else {
-                    result += currentValue
-                }
+        var acc = 0
+        s.forEachIndexed { i, c ->
+            val cv = cvt(c)
+            if (i < s.lastIndex && cv < cvt(s[i + 1])) {
+                acc -= cv
             } else {
-                result += currentValue
+                acc += cv
             }
         }
-        return result
+        return acc
     }
 }
