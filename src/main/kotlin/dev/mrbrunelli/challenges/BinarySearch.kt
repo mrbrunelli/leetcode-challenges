@@ -1,7 +1,9 @@
 package dev.mrbrunelli.challenges
 
 class BinarySearch {
-    // O(log(n)) is better than O(N)
+    // Binary search O(log(n)) is better than linear search O(N)
+    // To search a number in 128 numbers using a O(N), we need to iterate a maximum of 128 times
+    // To search a number in 128 numbers using a O(log(n)), we need to iterate a maximum of 7 times, which equals 2^7 = 128
     fun play(n: Int, list: List<Int>): Int? {
         var left = 0
         var right = list.lastIndex
