@@ -2,9 +2,10 @@ package dev.mrbrunelli.challenges
 
 class BinarySearch {
     // Big O notation
-    // Binary search O(log(n)) is better than linear search O(N)
+    // The Big O notation doesn't measure the execution time of an algorithm, but the number of operations it performs
+    // Binary search O(log n) is better than linear search O(N)
     // To search a number in 128 numbers using a O(N), we need to iterate a maximum of 128 times
-    // To search a number in 128 numbers using a O(log(n)), we need to iterate a maximum of 7 times, which equals 2^7 = 128
+    // To search a number in 128 numbers using a O(log n), we need to iterate a maximum of 7 times, which equals 2^7 = 128
     fun binary(target: Int, list: List<Int>): Int? {
         var leftPointer = 0
         var rightPointer = list.lastIndex
