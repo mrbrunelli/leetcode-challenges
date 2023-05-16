@@ -1,6 +1,7 @@
 package dev.mrbrunelli.challenges
 
 class TwoSum {
+    // time O(n)
     fun sol3(list: IntArray, target: Int): IntArray {
         val m = hashMapOf<Int, Int>()
         val r = IntArray(2)
@@ -17,6 +18,7 @@ class TwoSum {
         return r
     }
 
+    // time O(n^2-1)
     fun sol2(list: IntArray, target: Int): IntArray {
         val result = IntArray(2)
         for (i in list.indices) {
@@ -33,6 +35,7 @@ class TwoSum {
         return result
     }
 
+    // time O(n^2)
     fun sol1(list: IntArray, target: Int): IntArray? {
         for (item in list.withIndex()) {
             for (subItem in list.withIndex()) {
